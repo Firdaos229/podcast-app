@@ -1,5 +1,4 @@
 import Image1 from "../../../../public/front_office/images/Acceuil/image3.jpg";
-import Image7 from "../../../../public/front_office/images/Acceuil/image4.jpg";
 import Image4 from "../../../../public/front_office/images/Acceuil/image4.png";
 import Image8 from "../../../../public/front_office/images/Acceuil/image4.jpg";
 import Image from "next/image";
