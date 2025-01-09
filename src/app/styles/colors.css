@@ -1,0 +1,14 @@
+:root {
+    --default-background: #f7f7f8;
+    --count-background: #dddddd57;
+    --black: #081226;
+    --primary-color: #081226;
+    --secondary-color: #2ecc71;
+    --background-color:  #f8f9fa;
+    --text-color: #747474;
+    --border-color: #ddd;
+    --danger: #ff0000fa;
+    --title-color: #88888852;
+    --link-color : #888;
+    --link-active-color : #e0e2e3;
+}

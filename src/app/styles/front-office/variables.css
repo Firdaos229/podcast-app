@@ -1,0 +1,44 @@
+:root {
+  --anchor-base: #007461;
+  --primary-base: #007461;
+  --secondary-base: #424242;
+  --accent-base: #82b1ff;
+  --error-base: #ff5252;
+  --info-base: #2196f3;
+  --success-base: #4caf50;
+  --warning-base: #fb8c00;
+  --white-base: #171347;
+  --black-base: #000;
+  --secondary1-base: #308276;
+  --secondary2-base: #a0d7a2;
+  --secondary3-base: #004652;
+  --secondary4-base: #d8ead7;
+  --secondary5-base: #f3faf6;
+  --accent1-base: #e62f44;
+  --accent2-base: #0a94a8;
+  --danger100-base: #ae0014;
+  --danger50-base: #f3d9dc;
+  --danger30-base: #fdf1f1;
+  --success100-base: #008037;
+  --success50-base: #d9ece1;
+  --success30-base: #f4fbf6;
+  --warning100-base: #e06500;
+  --warning50-base: #fbe8d9;
+  --warning30-base: #fff7ed;
+  --info100-base: #2491bc;
+  --info50-base: #deeff5;
+  --info30-base: #eef9fb;
+  --contact-base: #009c8c;
+  --grey000-base: #171347;
+  --grey200-base: #f7f8fa;
+  --grey300-base: #ecedf0;
+  --grey600-base: #c1c9d6;
+  --grey650-base: #8d93aa;
+  --grey700-base: #666e8a;
+  --grey800-base: #071621;
+  --grey900-base: #000;
+  --grey300-faded: rgba(236,237,240,0.7);
+  --text-color: #333;
+
+}
+   

@@ -1,0 +1,219 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css');
+
+@import 'variables.css';
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+body {
+    background-color: var(--white-base);
+    color: var(--text-color);
+}
+
+/* Front Office */
+.header {
+    align-items: center;
+    background-color: var(--grey000-base);
+    /* background-color: #A2A6CC; */
+    box-shadow: 0 10px 60px -5px rgba(193, 201, 214, 0.45);
+}
+.header .fixed {
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+.navList {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+}
+
+.navList li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navList li a:hover {
+    text-decoration: underline;
+}
+
+.footer {
+  background: var(--grey800-base);
+  color: var(--grey200-base);
+  padding: 4rem 2.5rem;
+  position: relative; 
+  width: 100%;
+  background-size: cover; 
+}
+
+.footer-copyright {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--grey200-base);
+}
+
+.title1{
+  @apply font-bold;
+  font-size: 64px;
+  line-height: 96px;
+  color: white;
+}
+.title2{
+  @apply font-bold;
+  font-size: 48px;
+  line-height: 72px;
+  color: #000;
+}
+.title3{
+  @apply
+  font-bold;
+    
+    font-size: 36px;
+    line-height: 54px;
+    color: #000;
+}
+.title4{
+  @apply
+  font-bold;
+    
+    font-size: 32px;
+    line-height: 48px;
+    color: #000;
+}
+.title5{
+  @apply
+  font-bold;
+    
+    font-size: 24px;
+    line-height: 36px;
+    color: #000;
+}
+.title6{
+  @apply
+  font-bold;
+    
+    font-size: 20px;
+    line-height: 30px;
+    color: #000;
+}
+
+.paragraphe {
+ 
+    @apply
+    font-normal;
+      
+      font-size: 14px;
+      line-height: 21px;
+      color: #000;  
+}
+.paragraphebold {
+ 
+  @apply
+  font-bold;
+    
+    font-size: 14px;
+    line-height: 21px;
+    color: #000;  
+}
+
+/* .buttonfront {
+  @apply w-[155px] h-[50px] rounded-[20px] p-[5px]  text-[15px];
+ 
+} */
+.buttonfront {
+  @apply h-[50px] rounded-[20px] px-4 py-2 text-[15px] whitespace-nowrap inline-flex items-center justify-center;
+}
+
+.buttonfronte{
+  @apply w-[180px] h-[50px] rounded-[20px] p-[5px]  text-[15px];
+}
+
+
+.iconsax {
+  font-size: 24px;
+}
+.circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+
+.form-layout {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.form-input {
+  margin-bottom: 20px;
+}
+
+.form-input label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-input input,
+select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+
+.scrollbar-hide {
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; 
+}
+
+
+
+/* Ajoutez ce code dans un fichier CSS ou Tailwind */
+.faq-container {
+  @apply bg-[#1A1A2E] p-8 rounded-lg;
+}
+.faq-title {
+  @apply text-white text-2xl font-bold mb-6;
+}
+.faq-items {
+  @apply space-y-4;
+}
+.faq-item {
+  @apply bg-[#3A3A5A] p-4 rounded-lg;
+}
+.faq-question {
+  @apply flex justify-between items-center text-white font-medium cursor-pointer;
+}
+.faq-answer {
+  @apply text-white mt-4;
+}
