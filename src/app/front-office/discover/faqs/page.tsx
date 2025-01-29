@@ -1,5 +1,6 @@
+"use client";
 import Section from "@/app/components/front-office/section";
-import Image1 from "../../../../../public/front_office/images/Acceuil/image3.jpg";
+import Image1 from "../../../../../public/front_office/images/image3.png";
 import Newsletter from "@/app/components/front-office/newsletter";
 import FAQ from "@/app/components/front-office/faq";
 import { questions } from "@/app/utils/faq";
@@ -19,7 +20,6 @@ export default function Faqs() {
         additionnalContent={undefined}
       />
 
-      <FAQ questions={questions} imageSrc={Image1} />
       <FAQ questions={questions} imageSrc={Image1} />
 
       <div className="mt-3 py-10 flex justify-center">

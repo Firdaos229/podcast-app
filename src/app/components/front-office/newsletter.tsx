@@ -19,12 +19,14 @@ const Newsletter: React.FC<NewsletterProps> = ({
   return (
     <div className="flex flex-col md:flex-row items-center bg-[#382a74] rounded-xl p-6 md:p-10 lg:p-12 space-y-6 md:space-y-0">
       {/* Section image */}
-      <div className="relative  w-40 h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 flex-shrink-0">
+      <div className="relative h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 flex-shrink-0">
         <Image
           src={imageSrc}
           alt="Person listening to a podcast"
-          className="rounded-full object-cover"
-          layout="fill"
+          layout="intrinsic"
+          width={200}
+          height={200}
+          className="mt-10"
         />
       </div>
 

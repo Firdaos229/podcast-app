@@ -1,14 +1,15 @@
 import Section from "@/app/components/front-office/section";
 import Image1 from "../../../../public/front_office/images/Acceuil/image3.jpg";
+import Image4 from "../../../../public/front_office/images/image3.png";
 import CounterSection from "@/app/components/front-office/counterSection";
 import ValuesSection from "@/app/components/front-office/valueSection";
 import Newsletter from "@/app/components/front-office/newsletter";
 
 export default function About() {
   return (
-    <div className="mt-10">
+    <div className="">
       <Section
-        breadcrumb="Home » A propos"
+        breadcrumb="Home » À propos"
         title={"Let’s Know About PodSay!"}
         text={
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Vestibulum iaculis vulputate augue, non auctor nisi ultrices  suscipit. Nam interdum venenatis ligula. Donec blandit, ligula idtincidunt rhoncus, ex neque pharetra velit, at volutpat felis quama magna. In tempus, arcu vitae tempus congue, diam mi pharetradui, non convallis tortor nisi a nisl."
@@ -51,7 +52,7 @@ export default function About() {
           subtitle="Stay updated with our latest podcast episodes."
           placeholder="Your email address..."
           buttonText="Subscribe"
-          imageSrc={Image1}
+          imageSrc={Image4}
         />
       </div>
     </div>

@@ -1,74 +1,3 @@
-// import React from "react";
-// import "../../styles/front-office/front-office.css";
-// import Image, { StaticImageData } from "next/image";
-// import Button from "../button";
-// import Link from "next/link";
-// interface SectionProps {
-//   title: string;
-//   subtitle: string;
-//   buttonText: string;
-//   buttonText2: string;
-//   text: string;
-//   imageSrc: StaticImageData;
-//   imageAlt: string;
-//   imagePosition?: "left" | "right";
-//   additionnalContent: React.ReactNode;
-// }
-
-// const Section: React.FC<SectionProps> = ({
-//   title,
-//   subtitle,
-//   text,
-//   imageSrc,
-//   imageAlt,
-//   buttonText,
-//   buttonText2,
-//   imagePosition = "left",
-//   additionnalContent,
-// }) => {
-//   return (
-//     <div
-//       className={`mt-14 mx-auto flex flex-col md:flex-row items-center ${
-//         imagePosition === "right" ? "md:flex-row-reverse" : ""
-//       } `}
-//     >
-//       <div className={`lg:w-[35%] w-full  md:mt-0 relative lg:mr-20 `}>
-//         <div>
-//           <Image
-//             src={imageSrc}
-//             alt={imageAlt}
-//             className="object-cover  w-full h-[350px]  rounded-3xl"
-//           />
-//         </div>
-//       </div>
-//       <div className="lg:w-[65%] w-full lg:px-20 md:px-8 px-4 py-4">
-//         <p className="text-[#746bd8] mb-2">{subtitle}</p>
-//         <h1 className="lg:title2 md:title2 title3 mb-4 md:text-left">
-//           {title}
-//         </h1>
-
-//         <p className="mb-6  paragraphe ">{text}</p>
-
-//         {additionnalContent && <div className="mb-6">{additionnalContent}</div>}
-//         <div className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0 mb-4 justify-center items-center md:justify-start">
-//           <Link href="#">
-//             <Button text={buttonText} />
-//           </Link>
-//           <Link href="#">
-//             <Button text={buttonText2} variant="outline" />
-//           </Link>
-//         </div>
-//         {/* <div className="md:flex space-x-4 mb-4">
-//           <Link href="#">
-//             <Button text={buttonText} />
-//           </Link>
-//         </div> */}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Section;
 
 import React from "react";
 import "../../styles/front-office/front-office.css";
@@ -107,7 +36,7 @@ const Section: React.FC<SectionProps> = ({
 }) => {
   return (
     <div className="mt-20 mx-auto flex flex-col items-center">
-      <div className="w-full mt-24 -mb-11 flex justify-start ml-40">
+      <div className="w-full mt-14 -mb-11 flex justify-start ml-40">
         {breadcrumb && (
           <nav className="text-violetclair">
             <Link href="/" className="hover:underline">

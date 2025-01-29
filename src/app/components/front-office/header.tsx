@@ -1,5 +1,4 @@
 "use client";
-
 import React from "react";
 import {
   Navbar,
@@ -15,24 +14,37 @@ import {
   DropdownItem,
   DropdownMenu,
   DropdownTrigger,
-} from "@nextui-org/react";
+} from "@heroui/react";
 import Logo from "../logo";
-import { ArrowDown2 } from "iconsax-react";
+import AppointmentDrawer from "./appointmentDrawer";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
+  const ChevronDown = () => (
+    <svg
+      fill="none"
+      height={16}
+      width={16}
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="m19.92 8.95-6.52 6.52c-.77.77-2.03.77-2.8 0L4.08 8.95"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={1.5}
+      />
+    </svg>
+  );
+
   const menuItems = [
-    "Profile",
-    "Dashboard",
-    "Activity",
-    "Analytics",
-    "System",
-    "Deployments",
-    "My Settings",
-    "Team Settings",
-    "Help & Feedback",
-    "Log Out",
+    { text: "Accueil", href: "/front-office/home" },
+    { text: "A propos", href: "/front-office/about" },
+    { text: "Services", href: "/front-office/discover/oservices" },
+    { text: "Contact", href: "/front-office/contact-us" },
+    { text: "Prendre RDV", href: "/front-office/contact-us" },
   ];
 
   return (
@@ -48,7 +60,7 @@ export default function Header() {
       </NavbarContent>
 
       <NavbarContent
-        className="hidden sm:flex gap-4 text-violetclair"
+        className="hidden sm:flex gap-2 text-violetclair"
         justify="center"
       >
         <NavbarItem>
@@ -61,99 +73,112 @@ export default function Header() {
             <p className="hover:text-verttitle">Karnel Production</p>
           </Link>
         </NavbarItem>
-
-        <Dropdown>
-          <NavbarItem>
+        {/* Programmes Dropdown */}
+        <NavbarItem>
+          <Dropdown>
             <DropdownTrigger>
               <Button
                 disableRipple
-                className="p-0 bg-transparent data-[hover=true]:bg-transparent"
-                endContent={<ArrowDown2 />}
+                className="flex items-center gap-x-2 bg-transparent data-[hover=true]:bg-transparent"
                 radius="sm"
                 variant="light"
               >
                 Programmes
+                <ChevronDown />
               </Button>
             </DropdownTrigger>
-          </NavbarItem>
-          <DropdownMenu
-            aria-label="programmes"
-            className="w-[340px]"
-            itemClasses={{
-              base: "gap-4",
-            }}
-          >
-            <DropdownItem key="episodes">Episodes</DropdownItem>
-            <DropdownItem key="blog_actualités">Blog/Actualités</DropdownItem>
-            <DropdownItem key="events">Événements/Ateliers</DropdownItem>
-          </DropdownMenu>
-        </Dropdown>
+            <DropdownMenu
+              aria-label="programmes"
+              className="min-w-max bg-white rounded-lg shadow-lg p-2"
+            >
+              <DropdownItem key="episodes">
+                <Link href="#" className="hover:text-[#a2a6cc]">
+                  Episodes
+                </Link>
+              </DropdownItem>
+              <DropdownItem key="blog_actualites">
+                <Link href="#" className="hover:text-[#a2a6cc]">
+                  Blog/Actualités
+                </Link>
+              </DropdownItem>
+              <DropdownItem key="evenements_ateliers">
+                <Link href="#" className="hover:text-[#a2a6cc]">
+                  Événements/Ateliers
+                </Link>
+              </DropdownItem>
+            </DropdownMenu>
+          </Dropdown>
+        </NavbarItem>
 
-        <Dropdown>
-          <NavbarItem>
+        {/* À découvrir Dropdown */}
+        <NavbarItem>
+          <Dropdown>
             <DropdownTrigger>
               <Button
                 disableRipple
-                className="p-0 bg-transparent data-[hover=true]:bg-transparent"
-                endContent={<ArrowDown2 />}
+                className="flex items-center gap-x-2 bg-transparent data-[hover=true]:bg-transparent"
                 radius="sm"
                 variant="light"
               >
-                A découvrir
+                À découvrir
+                <ChevronDown />
               </Button>
             </DropdownTrigger>
-          </NavbarItem>
-          <DropdownMenu
-            aria-label="à decouvrir"
-            className="w-[340px]"
-            itemClasses={{
-              base: "gap-4",
-            }}
-          >
-            <DropdownItem key="services">Services</DropdownItem>
-            <DropdownItem key="galerie">Galerie/Photos</DropdownItem>
-            <DropdownItem key="témoignages">
-              <Link href="/front-office/discover/testimonials">
-                <p className="hover:text-[#a2a6cc]">Témoignages</p>
-              </Link>
-            </DropdownItem>
-            <DropdownItem key="FAQ">
-              <Link href="/front-office/discover/faqs">
-                <p className="hover:text-[#a2a6cc]">FAQ</p>
-              </Link>
-            </DropdownItem>
-          </DropdownMenu>
-        </Dropdown>
+            <DropdownMenu
+              aria-label="à découvrir"
+              className="min-w-max bg-white rounded-lg shadow-lg p-2"
+            >
+              <DropdownItem key="services">
+                <Link
+                  href="/front-office/discover/oservices"
+                  className="hover:text-[#a2a6cc]"
+                >
+                  Services
+                </Link>
+              </DropdownItem>
+              <DropdownItem key="galerie">
+                <Link href="#" className="hover:text-[#a2a6cc]">
+                  Galerie/Photos
+                </Link>
+              </DropdownItem>
+              <DropdownItem key="temoignages">
+                <Link
+                  href="/front-office/discover/testimonials"
+                  className="hover:text-[#a2a6cc]"
+                >
+                  Témoignages
+                </Link>
+              </DropdownItem>
+              <DropdownItem key="faq">
+                <Link
+                  href="/front-office/discover/faqs"
+                  className="hover:text-[#a2a6cc]"
+                >
+                  FAQ
+                </Link>
+              </DropdownItem>
+            </DropdownMenu>
+          </Dropdown>
+        </NavbarItem>
 
         <NavbarItem>
           <Link href="/front-office/contact-us">
-            <p className="hover:text-verttitle">Contactez-nous</p>
+            <p className="hover:text-verttitle">Contactez-Nous</p>
           </Link>
         </NavbarItem>
       </NavbarContent>
+
       <NavbarContent justify="end">
         <NavbarItem>
-          <Button as={Link} className="text-verttitle" href="#" variant="flat">
-            Prendre mon RDV
-          </Button>
+         <AppointmentDrawer />
         </NavbarItem>
       </NavbarContent>
+
       <NavbarMenu>
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
-            <Link
-              className="w-full"
-              color={
-                index === 2
-                  ? "primary"
-                  : index === menuItems.length - 1
-                  ? "danger"
-                  : "foreground"
-              }
-              href="#"
-              size="lg"
-            >
-              {item}
+            <Link className="w-full" href={item.href} size="lg">
+              {item.text}
             </Link>
           </NavbarMenuItem>
         ))}

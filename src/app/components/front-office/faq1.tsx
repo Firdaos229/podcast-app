@@ -1,72 +1,72 @@
-"use client";
+import { useState } from "react";
 
-import React, { useState } from "react";
-import Image from "next/image";
-import { StaticImageData } from "next/image";
+const FAQSection = () => {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
-interface Question {
-  title: string;
-  content: string;
-}
+  const toggleAccordion = (index: number) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
 
-interface FAQ1Props {
-  questions: Question[];
-  imageSrc: StaticImageData;
-}
+  const faqItems = [
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit?",
+    "Curabitur id eros quis nunc suscipit blandit?",
+    "Quisque aliquet, libero consequat elementum convallis?",
+    "Nulla facilisi. Vivamus feugiat dolor vel nisi sodales?",
+    "Pellentesque habitant morbi tristique senectus et netus?",
+    "Nam pretium turpis et arcu. Duis arcu tortor?",
+  ];
 
-const FAQ1: React.FC<FAQ1Props> = ({ questions, imageSrc }) => {
+  const categories = [
+    { label: "General Questions", color: "bg-purple-500" },
+    { label: "Premium Questions", color: "bg-pink-500" },
+    { label: "Career Questions", color: "bg-blue-300" },
+    { label: "Account Questions", color: "bg-indigo-500" },
+  ];
+
   return (
-    <div className="flex flex-col items-center p-8 rounded-lg bg-gray-900 gap-8">
-      {/* Section image et titre */}
-      <div className="text-center">
-        <Image
-          src={imageSrc}
-          alt="FAQ illustration"
-          className="rounded-lg shadow-lg"
-          width={300}
-          height={300}
-        />
-        <h1 className="text-[#ff7a59] text-3xl font-bold mt-4">Your Questions Answered</h1>
-        <p className="text-gray-400 mt-2">
-          Discover the most asked questions and their solutions here.
-        </p>
+    <div className="flex flex-col lg:flex-row bg-gray-900 text-white p-8">
+      {/* FAQ List */}
+      <div className="flex-1 space-y-4">
+        {faqItems.map((item, index) => (
+          <div
+            key={index}
+            className="border border-gray-700 rounded-lg overflow-hidden"
+          >
+            <button
+              className="w-full text-left px-4 py-2 bg-gray-800 hover:bg-gray-700"
+              onClick={() => toggleAccordion(index)}
+            >
+              <div className="flex justify-between items-center">
+                <span>{item}</span>
+                <span>{activeIndex === index ? "-" : "+"}</span>
+              </div>
+            </button>
+            {activeIndex === index && (
+              <div className="px-4 py-2 bg-gray-700">
+                <p>
+                  Amet risus nulla eget adipiscing ante. Vitae, hac amet,
+                  consectetur quis dictum dictum. Enim, molestie vel vitae eget
+                  nibh duis dictum.
+                </p>
+              </div>
+            )}
+          </div>
+        ))}
       </div>
 
-      {/* Questions FAQ */}
-      <div className="w-full max-w-2xl">
-        {questions.map((question, index) => (
-          <FAQ1Item key={index} question={question} isDefaultOpen={index === 0} />
+      {/* Categories */}
+      <div className="flex flex-col space-y-4 mt-8 lg:mt-0 lg:ml-8">
+        {categories.map((category, index) => (
+          <div
+            key={index}
+            className={`p-4 rounded-lg text-center ${category.color} text-white`}
+          >
+            {category.label}
+          </div>
         ))}
       </div>
     </div>
   );
 };
 
-// Composant pour les items FAQ1
-const FAQ1Item: React.FC<{ question: Question; isDefaultOpen?: boolean }> = ({
-  question,
-  isDefaultOpen = false,
-}) => {
-  const [isOpen, setIsOpen] = useState(isDefaultOpen);
-
-  const toggle = () => setIsOpen(!isOpen);
-
-  return (
-    <div className="mb-4">
-      <div
-        className="flex justify-between items-center bg-[#ff7a59] text-white p-4 rounded-lg cursor-pointer"
-        onClick={toggle}
-      >
-        <h3 className="font-semibold">{question.title}</h3>
-        <span className="text-xl">{isOpen ? "-" : "+"}</span>
-      </div>
-      {isOpen && (
-        <p className="bg-gray-800 text-gray-300 p-4 rounded-b-lg">
-          {question.content}
-        </p>
-      )}
-    </div>
-  );
-};
-
-export default FAQ1;
+export default FAQSection;

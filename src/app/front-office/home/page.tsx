@@ -1,7 +1,7 @@
-
 import Image1 from "../../../../public/front_office/images/Acceuil/image3.jpg";
-import Image4 from "../../../../public/front_office/images/Acceuil/image4.png";
-import Image8 from "../../../../public/front_office/images/Acceuil/image4.jpg";
+import Image4 from "../../../../public/front_office/images/image3.png";
+import Image8 from "../../../../public/front_office/images/image2.png";
+import Image0 from "../../../../public/front_office/images/image1.png";
 import Image from "next/image";
 import HeroText from "@/app/components/front-office/heroText";
 import Service from "@/app/components/front-office/service";
@@ -15,15 +15,12 @@ import CategoryCard from "@/app/components/front-office/categoryCard";
 export default function Home() {
   return (
     <div>
-      <section className="relative w-full h-[500px] mt-32 mb-8 px-8 lg:px-10 flex items-center justify-between">
-        {/* Background Image */}
+      <section className="relative w-full h-[500px] mt-10 mb-8 px-8 lg:px-10 flex items-center justify-between">
         <div className="relative w-1/2 h-full">
           <Image
-            src={Image1}
+            src={Image0}
             alt="Image d'inspiration"
-            layout="fill"
-            objectFit="cover"
-            className="rounded-xl inset-0 w-full h-full object-cover opacity-80 -z-10"
+            className="h-full inset-0 object-cover opacity-80 -z-10"
           />
         </div>
         {/* Text Section */}
@@ -35,7 +32,9 @@ export default function Home() {
         </div>
       </section>
 
-      <Service />
+      
+        <Service />
+     
 
       <div className="mx-auto flex flex-col md:flex-row items-center justify-between mt-20 gap-8">
         {/* Section de l'image principale */}
@@ -152,7 +151,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="bg-[#0b1225] py-10 flex justify-center">
+      <div className=" py-10 flex justify-center">
         <Newsletter
           title="New Episodes Will Always Be Updated Regularly"
           subtitle="Stay updated with our latest podcast episodes."
